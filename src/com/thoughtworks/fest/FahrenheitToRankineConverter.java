@@ -17,14 +17,7 @@ public class FahrenheitToRankineConverter {
     private JTextField inputField;
 
     public FahrenheitToRankineConverter(final JFrame frame) {
-        backToTheIntroButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                frame.setContentPane(new IntroCard(frame).panel1);
-                frame.pack();
-                frame.setVisible(true);
-            }
-        });
+        backToTheIntroButton.addActionListener(new GoToIntro(frame));
         convertButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -34,4 +27,6 @@ public class FahrenheitToRankineConverter {
             }
         });
     }
+
+
 }
