@@ -1,7 +1,8 @@
 package com.thoughtworks.fest;
 
+import com.thoughtworks.fest.actionlisteners.ConvertToFahrenheit;
+
 import javax.swing.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
@@ -10,24 +11,17 @@ import java.awt.event.ActionListener;
 public class CelsiusToFahrenheitConverter extends JPanel{
     public JPanel panel1;
     private JButton needMoreConversionsConvertButton;
-    private JTextField inputField;
+    public JTextField inputField;
     private JButton convertButton;
     private JLabel fahrenheitLabel;
     private JLabel celsiusLabel;
-    private JLabel resultLabel;
+    public JLabel resultLabel;
 
     public CelsiusToFahrenheitConverter(ActionListener goToRankineActionListener) {
 
         needMoreConversionsConvertButton.addActionListener(goToRankineActionListener);
 
-        convertButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int tempFahr = (int)((Double.parseDouble(inputField.getText()))
-                        * 1.8 + 32);
-                resultLabel.setText(tempFahr + " Fahrenheit");
-            }
-        });
+        convertButton.addActionListener(new ConvertToFahrenheit(this));
     }
 
 }

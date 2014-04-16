@@ -1,8 +1,9 @@
 package com.thoughtworks.fest;
 
+import com.thoughtworks.fest.actionlisteners.ConvertToRankine;
+import com.thoughtworks.fest.actionlisteners.GoToIntro;
+
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * Created by Thoughtworker on 4/14/14.
@@ -10,22 +11,15 @@ import java.awt.event.ActionListener;
 public class FahrenheitToRankineConverter {
     public JPanel panel1;
     private JButton backToTheIntroButton;
-    private JButton convertButton;
+    public JButton convertButton;
     private JLabel rankineLabel;
-    private JLabel resultLabel;
+    public JLabel resultLabel;
     private JLabel fahrenheitLabel;
-    private JTextField inputField;
+    public JTextField inputField;
 
     public FahrenheitToRankineConverter(final JFrame frame) {
         backToTheIntroButton.addActionListener(new GoToIntro(frame));
-        convertButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int tempFahr = (int)((Double.parseDouble(inputField.getText()))
-                         + 460);
-                resultLabel.setText(tempFahr + " Fahrenheit");
-            }
-        });
+        convertButton.addActionListener(new ConvertToRankine(this));
     }
 
 
