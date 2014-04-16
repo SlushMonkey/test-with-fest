@@ -35,7 +35,7 @@ public class CelsiusToFahrenheitConverterTest extends FestSwingTestngTestCase {
     }
 
     private void thenIGet(String result) {
-        window.label("resultLabel").requireText("32 Fahrenheit");
+        window.label("resultLabel").requireText(result);
     }
 
     private void whenIConvertToFahrenheit() {

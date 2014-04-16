@@ -1,5 +1,7 @@
 package com.thoughtworks.fest;
 
+import com.thoughtworks.fest.actionlisteners.GoToIntro;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,7 +18,8 @@ public class PressureConverter {
     private JLabel psiResult;
     private JLabel mpaResult;
 
-    public PressureConverter() {
+    public PressureConverter(GoToIntro goToIntro) {
+
         convertButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -39,5 +42,6 @@ public class PressureConverter {
 
             }
         });
+        backButton.addActionListener(goToIntro);
     }
 }

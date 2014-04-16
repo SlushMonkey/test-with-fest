@@ -15,7 +15,7 @@ public class GoToPressureConverter implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        frame.setContentPane(new PressureConverter().panel1);
+        frame.setContentPane(new PressureConverter(new GoToIntro(frame)).panel1);
         frame.pack();
         frame.setVisible(true);
     }
