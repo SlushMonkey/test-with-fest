@@ -8,14 +8,16 @@ import java.awt.event.ActionListener;
 
 public class GoToIntro implements ActionListener {
     private final JFrame frame;
+    private IntroCard introCard;
 
     public GoToIntro(JFrame frame) {
         this.frame = frame;
+        introCard = new IntroCard(new GoToRankineConverter(this.frame), new GoToCelsiusConverter(this.frame, new GoToRankineConverter(this.frame)), new GoToPressureConverter(this.frame));
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        frame.setContentPane(new IntroCard(new GoToRankineConverter(frame), new GoToCelsiusConverter(frame, new GoToRankineConverter(frame))).panel1);
+        frame.setContentPane(introCard.panel1);
         frame.pack();
         frame.setVisible(true);
     }
