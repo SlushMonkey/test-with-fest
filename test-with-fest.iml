@@ -10,6 +10,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="org.easytesting:fest-swing:1.2.1" level="project" />
     <orderEntry type="library" name="org.easytesting:fest-swing-testng:1.2.1" level="project" />
+    <orderEntry type="library" name="org.jbehave:jbehave-core:3.9" level="project" />
   </component>
 </module>
 
